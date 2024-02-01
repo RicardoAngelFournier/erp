@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+// import {AsyncStorage} from 'react-native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 const LoginScreen = () => {
@@ -19,7 +20,12 @@ const handleLogin = async () => {
       const accessToken = response.data.accessToken;
 
       // Guardar el token en AsyncStorage
-      await AsyncStorage.setItem('token', accessToken);
+      try {
+          await AsyncStorage.setItem('token', accessToken);
+      } catch (error) {
+        console.log(error);
+        // Error saving data
+      }
 
       console.log('Token de Acceso guardado en AsyncStorage:', accessToken);
 

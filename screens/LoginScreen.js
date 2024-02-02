@@ -38,7 +38,7 @@ const handleLogin = async () => {
       // console.log(responseDash.data);
 
     
-      navigation.navigate('Profile');
+      navigation.navigate('Inicio');
       // Realizar la navegación o acciones adicionales después de iniciar sesión
     } 
     else {

@@ -2,8 +2,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome6'; 
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function ProfileScreen() {
+  const navigation = useNavigation();
   const row1 = [
     { icon: 'person-running', screen: 'Screen1' },
     { icon: 'users-line', screen: 'Screen2' },
@@ -38,7 +41,7 @@ export default function ProfileScreen() {
     left: 0,
     right: 0,
     borderRadius: 25,
-    top: 110,
+    top: 35,
     zIndex: -1,
   };
 
@@ -58,11 +61,11 @@ export default function ProfileScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#4D69B4' }}>
       {/* Top row */}
-      <View style={{ alignItems: 'center', marginTop: -180 }}>
+      <View style={{ alignItems: 'center', marginTop: -210 }}>
         {topRow.map((card, index) => (
           <TouchableOpacity
             key={index}
-            onPress={() => navigation.navigate(card.screen)}
+            onPress={() => navigation.navigate('Prospectos')}
             style={{
               width: card.size.width,
               height: card.size.height,

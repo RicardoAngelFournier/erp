@@ -11,11 +11,10 @@ const [password, setPassword] = useState('');
 
 const handleLogin = async () => {
   try {
-    const response = await axios.post('http://192.168.151.244:8000/api/v1/login', {
+    const response = await axios.post('http://192.168.151.194:8081/api/v1/login', {
       email: email,
       password: password,
     });
-
     if (response.data.success) {
       const accessToken = response.data.accessToken;
 

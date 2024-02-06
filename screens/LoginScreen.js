@@ -10,37 +10,9 @@ const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 
 const handleLogin = async () => {
-  try {
-    const response = await axios.post('http://192.168.151.194:8081/api/v1/login', {
-      email: email,
-      password: password,
-    });
-    if (response.data.success) {
-      const accessToken = response.data.accessToken;
 
-      try {
-          await AsyncStorage.setItem('token', accessToken);
-      } catch (error) {
-        console.log(error);
-        // Error saving data
-      }
-
-      console.log('Token de Acceso guardado en AsyncStorage:', accessToken);
-
-      navigation.navigate('CartaP', { user: response.data.user });
-
-
-          // Realizar la navegación o acciones adicionales después de iniciar sesión
-    } 
-    else {
-      console.error('La autenticación falló');
-    }
-  }  catch (error) {
-      console.error('Error de solicitud:', error.message);
-      console.error('Error detallado:', error);
-      console.error('Respuesta completa del error:', error.response);
-  }
-};
+      navigation.navigate('Prospectos');
+}
 
 return (
   <View style={styles.container}>
@@ -57,6 +29,8 @@ return (
       secureTextEntry={true}
       onChangeText={(text) => setPassword(text)}
     />
+
+
     <TouchableOpacity style={styles.button} onPress={handleLogin}>
       <Text style={styles.buttonText}>Iniciar Sesión</Text>
     </TouchableOpacity>

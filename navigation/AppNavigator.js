@@ -13,6 +13,8 @@ export const AppNavigator = () => (
       <Stack.Screen name="CartaP" component={CollapsibleCard}/>
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="Prospectos" component={ProspectosScreen} />
+      <Stack.Screen name="ProspectosInfo" component={ProspectosInfo} />
     </Stack.Navigator>
 
 );

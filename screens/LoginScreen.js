@@ -10,9 +10,43 @@ const LoginScreen = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const setToken = useGlobalState((state) => state.setToken);
 
-  const { setUser, setToken } = useGlobalState();
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://192.168.151.244:8000/api/v1/login', {
+        email: email,
+        password: password,
+      });
 
+      if (response.data.success) {
+        const accessToken = response.data.accessToken;
+
+        // Guardar el token en AsyncStorage
+        try {
+          await AsyncStorage.setItem('token', accessToken);
+        } catch (error) {
+          console.log(error);
+          // Error saving data
+        }
+
+        console.log('Token de Acceso guardado en AsyncStorage:', accessToken);
+
+        // Establecer el token en el estado global
+        setToken(accessToken);
+
+        navigation.navigate('CartaP', { user: response.data.user });
+
+        // Realizar la navegación o acciones adicionales después de iniciar sesión
+      } else {
+        console.error('La autenticación falló');
+      }
+    } catch (error) {
+      console.error('Error de solicitud:', error.message);
+      console.error('Error detallado:', error);
+      console.error('Respuesta completa del error:', error.response);
+    }
+  };
 
   return (
     <View style={styles.container}>

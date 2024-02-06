@@ -13,7 +13,6 @@ const ProfileScreen = ({ route }) => {
           <Text style={styles.header}>{user.fullName}</Text>
           <Text style={styles.text}>{user.email}</Text>
           <Text style={styles.text}>{user.puesto}</Text>
-          {/* Puedes agregar más campos según la estructura del objeto de usuario */}
         </View>
       </View>
     </View>

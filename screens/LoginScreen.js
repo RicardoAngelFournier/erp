@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-// import {AsyncStorage} from 'react-native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
+
 const LoginScreen = () => {
   const navigation = useNavigation();
 const [email, setEmail] = useState('');
@@ -29,17 +29,10 @@ const handleLogin = async () => {
 
       console.log('Token de Acceso guardado en AsyncStorage:', accessToken);
 
-      // const responseDash = await axios.get('http://192.168.151.244:8000/api/v1/dashboard', {
-      //     headers: {
-      //         'Accept': 'application/json',
-      //         'Authorization': 'Bearer '+accessToken
-      //     }
-      // });
-      // console.log(responseDash.data);
+      navigation.navigate('CartaP', { user: response.data.user });
 
-    
-      navigation.navigate('Profile');
-      // Realizar la navegación o acciones adicionales después de iniciar sesión
+
+          // Realizar la navegación o acciones adicionales después de iniciar sesión
     } 
     else {
       console.error('La autenticación falló');

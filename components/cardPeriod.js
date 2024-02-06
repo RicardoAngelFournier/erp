@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Collapsible from 'react-native-collapsible';
 import axios from 'axios';
-import accessToken from '../src/data/authData';
 
 const CollapsibleCard = ({ route }) => {
   const [apiData, setApiData] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [token, settoken] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {

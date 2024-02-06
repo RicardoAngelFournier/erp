@@ -16,6 +16,7 @@ const ProspectosScreen = () => {
     { id: 6, compania: 'DISTRIBUIDORA DE LLANTAS CAPITAL', name: 'Ricardo Herrera', role: 'Encargado', phoneNumber: '618-107-95-78' },
   ];
 
+  
   const handleCardPress = (prospect) => {
     navigation.navigate('ProspectosInfo', { prospect });
   };

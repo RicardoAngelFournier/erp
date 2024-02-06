@@ -9,7 +9,7 @@ import CollapsibleCard from '../components/cardPeriod';
 const Stack = createStackNavigator();
 
 export const AppNavigator = () => (
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator initialRouteName="Prospectos">
       <Stack.Screen name="CartaP" component={CollapsibleCard}/>
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />

@@ -18,7 +18,6 @@ const handleLogin = async () => {
     if (response.data.success) {
       const accessToken = response.data.accessToken;
 
-      // Guardar el token en AsyncStorage
       try {
           await AsyncStorage.setItem('token', accessToken);
       } catch (error) {

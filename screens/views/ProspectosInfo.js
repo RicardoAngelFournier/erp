@@ -50,7 +50,6 @@ const ProspectosInfo = ({ navigation }) => {
     <Text style={commonStyles.titulomorado}>De:</Text>
     <Text style={commonStyles.titulomorado}>Hasta:</Text>
   </View>
-
   <View style={styles.prospectValues}>
     <Text style={commonStyles.info}>{prospectsData2[0].name}</Text>
     <Text style={commonStyles.info}>{prospectsData2[0].role}</Text>
@@ -63,7 +62,6 @@ const ProspectosInfo = ({ navigation }) => {
 </View>
 
     </View>
-
   );
 };
 

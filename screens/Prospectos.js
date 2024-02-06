@@ -22,8 +22,8 @@ const ProspectosScreen = () => {
         <TextInput
           style={commonStyles.searchInput}
           placeholder="Buscar..."
-          placeholderTextColor="#2E3548"
-        />
+          placeholderTextColor="#2E3548"/>
+          
         <Icon name="users-line" style={{ ...commonStyles.icon, fontSize: 40 }} />
       </View>
       <View style={commonStyles.fullWidthCard}></View>

@@ -5,7 +5,6 @@ import LoginScreen from '../screens/LoginScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProspectosScreen from '../screens/Prospectos';
 import ProspectosInfo from '../screens/views/ProspectosInfo'
-
 const Stack = createStackNavigator();
 
 export const AppNavigator = () => (
@@ -23,7 +22,6 @@ export const AppNavigator = () => (
       <Stack.Screen name="Inicio" component={ProfileScreen} />
       <Stack.Screen name="Prospectos" component={ProspectosScreen} />
       <Stack.Screen name="ProspectosInfo" component={ProspectosInfo} />
-
     </Stack.Navigator>
 
 );

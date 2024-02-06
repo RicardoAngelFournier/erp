@@ -10,8 +10,13 @@ const ProspectosScreen = () => {
   const prospectsData = [
     { id: 1, compania: 'Berel Pinturas', name: 'Ricardo Herrera', role: 'Encargado', phoneNumber: '618-107-95-78' },
     { id: 2, compania: 'DISTRIBUIDORA DE LLANTAS CAPITAL', name: 'Ricardo Herrera', role: 'Encargado', phoneNumber: '618-107-95-78' },
+    { id: 3, compania: 'DISTRIBUIDORA DE LLANTAS CAPITAL', name: 'Ricardo Herrera', role: 'Encargado', phoneNumber: '618-107-95-78' },
+    { id: 4, compania: 'DISTRIBUIDORA DE LLANTAS CAPITAL', name: 'Ricardo Herrera', role: 'Encargado', phoneNumber: '618-107-95-78' },
+    { id: 5, compania: 'DISTRIBUIDORA DE LLANTAS CAPITAL', name: 'Ricardo Herrera', role: 'Encargado', phoneNumber: '618-107-95-78' },
+    { id: 6, compania: 'DISTRIBUIDORA DE LLANTAS CAPITAL', name: 'Ricardo Herrera', role: 'Encargado', phoneNumber: '618-107-95-78' },
   ];
 
+  
   const handleCardPress = (prospect) => {
     navigation.navigate('ProspectosInfo', { prospect });
   };
@@ -22,8 +27,8 @@ const ProspectosScreen = () => {
         <TextInput
           style={commonStyles.searchInput}
           placeholder="Buscar..."
-          placeholderTextColor="#2E3548"
-        />
+          placeholderTextColor="#2E3548"/>
+
         <Icon name="users-line" style={{ ...commonStyles.icon, fontSize: 40 }} />
       </View>
       <View style={commonStyles.fullWidthCard}></View>

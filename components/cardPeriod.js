@@ -8,7 +8,6 @@ const CollapsibleCard = ({ route }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [token, settoken] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {

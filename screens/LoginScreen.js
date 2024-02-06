@@ -3,15 +3,13 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-nativ
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
-import {useGlobalState} from '../src/api/auth'
-
-
+import { useGlobalState } from '../src/api/auth';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const setToken = useGlobalState((state) => state.setToken);
+  const { setUser, setToken } = useGlobalState();
 
   const handleLogin = async () => {
     try {
